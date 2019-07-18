@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <style type="text/css">
+            .wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                }
+            * {box-sizing: border-box;}
+
+            .wrapper {
+                column-gap: 3em;
+                row-gap: 5em;
+                margin: 8em;
+            }
+
+            .wrapper > div {
+                /* padding: 1em; */
+                border-bottom: 1px solid black;
+                padding-bottom: 2em;
+            }
+
+            .instructions{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                font-family: 'Franklin Gothic Medium', Helvetica, Arial, sans-serif;
+                color: black;
+            }
+
+            .embed{
+                grid-column-start: 2;
+                grid-column-end:4;
+            }
+
+            .embed > iframe {
+                width:100%;
+                height: 500px;
+                border: none;
+            }
+
+            code {
+                color: #d9480f;
+                font-size: 1.25em;
+                /* background-color: lightgrey; */
+            }
+            .slang{
+                grid-column-start:1;
+                grid-column-end:4;
+                margin-bottom: 40px;
+            }
+            .slang > iframe {
+                width: 100%;
+                border:none;
+                height: 50em;
+            }
+        </style>
+    </head>
+
+    <body>
+
+    <div class="wrapper">
+        <div class="slang">
+            <iframe src="https://editor.p5js.org/code_slang/embed/QQEgilJDk"></iframe>
+        </div>
+        <div class="instructions"><p>This sketch passes an array of radiuses through several slang functions, which perform mathematical operations on each radius.</p></div>
+        <div class="embed">
+            <code>
+                let radiuses = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+            </code>
+        </div>
+
+        <div class="instructions"><p>Without the slang functions, the radiuses are equal and the base shape is just a circle.</p>
+            <!-- <pre>
+                <code>
+                    beginShape();
+                    radiuses.forEach((radius,angle) => {
+                      let x = radius * Math.cos(radians(angle)) + windowWidth / 2;
+                      let y = radius * Math.sin(radians(angle)) + windowHeight / 2;
+                      vertex(x, y);
+                    })
+                    endShape();
+                </code>
+            </pre> -->
+            <a href="https://editor.p5js.org/code_slang/sketches/1RknaENfh" target="new">Edit here</a></div>
+        <div class="embed"><iframe src="https://editor.p5js.org/code_slang/embed/1RknaENfh"></iframe>
+        </div>
+
+        <div class="instructions">
+            <p>If you manually change the numbers in <code>radiuses</code>, the circle will change shape accordingly.</p>
+            <p><a href="https://editor.p5js.org/code_slang/sketches/xcZw02i_G" target="new">Try it.</a></p>
+        </div>
+        <div class="embed"><iframe src="https://editor.p5js.org/code_slang/embed/xcZw02i_G"></iframe></div>
+
+        <div class="instructions">
+            <p>The slang functions codify these changes to the "radiuses" in the <code>radiuses</code> array. </p> 
+            <p>For example, multiplying each radius by 2 would double the size of the circle. Using the <code>map</code> function, we can easily loop over each radius in <code>radiuses</code>:</p>
+            <p><code>radiuses.map(radius => radius * 2)</code></p>
+            <p></p>
+            <p><a href="https://editor.p5js.org/code_slang/sketches/BUCftYsxu" target="new">Try out your own functions here.</a></p>
+
+        </div>
+        <div class="embed"><iframe src="https://editor.p5js.org/undefined/embed/BUCftYsxu"></iframe></div>
+
+
+        <div class="instructions">
+            <p>list of math functions; space to experiment and swap</p>
+        </div>
+        <div class="embed"></div>
+
+        <div class="instructions">
+            <p>combine math functions</p>
+        </div>
+        <div class="embed"></div>
+
+    </div>
+
+    </body>
+</html>
