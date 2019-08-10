@@ -61,40 +61,58 @@
         <div class="slang">
             <iframe src="https://editor.p5js.org/code_slang/embed/QQEgilJDk"></iframe>
         </div>
-        <div class="instructions"><p>This sketch passes an array of radiuses through several slang functions, which perform mathematical operations on each radius.</p></div>
+
+        <div class="instructions"><p>This sketch uses p5.js, a javascript library that makes it easy to draw graphics on an webpage. To draw a custom shape, you begin with the <code>beginShape()</code> function, then define the (x,y) coordinates of the vertices of your shape. p5 connects the points for you. </p>
+        <p>For example, the following code will draw a square, as seen on the right:</p>
+<pre>
+<code>
+beginShape();
+vertex(30, 20);
+vertex(85, 20);
+vertex(85, 75);
+vertex(30, 75);
+endShape(CLOSE);
+</code>
+</pre>
+        <p><a href="https://editor.p5js.org/code_slang/sketches/qEdnTcle9" target="new">Try it.</a></p>
+        </div>
+        <div class="embed"><iframe src="https://editor.p5js.org/code_slang/embed/qEdnTcle9"></iframe></div>
+
+        <div class="instructions"><p>Code Slang calculates these vertices by passing an array of points through several slang functions. These functions perform mathematical operations on each number.</p></div>
         <div class="embed">
             <code>
-                let radiuses = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+                let points = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
             </code>
         </div>
 
-        <div class="instructions"><p>Without the slang functions, the radiuses are equal and the base shape is just a circle.</p>
-            <!-- <pre>
-                <code>
-                    beginShape();
-                    radiuses.forEach((radius,angle) => {
-                      let x = radius * Math.cos(radians(angle)) + windowWidth / 2;
-                      let y = radius * Math.sin(radians(angle)) + windowHeight / 2;
-                      vertex(x, y);
-                    })
-                    endShape();
-                </code>
-            </pre> -->
-            <!-- <a href="https://editor.p5js.org/code_slang/sketches/1RknaENfh" target="new">Edit here</a> -->
+        <div class="instructions"><p>Without the slang functions, the points are equal and the base shape is just a circle. This is because we use sine and cosine <a href="https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig/x2ec2f6f830c9fb89:unit-circle/v/unit-circle-definition-of-trig-functions-1" target="new">to calculate the (x,y) coordinates</a> of the vertices:</p>
+<pre>
+<code>
+beginShape();
+
+points.forEach((point,angle) => {
+    let x = point * Math.cos(radians(angle));
+    let y = point * Math.sin(radians(angle));
+    vertex(x, y);
+})
+
+endShape();
+</code>
+</pre>         
         </div>
         <div class="embed"><iframe src="https://editor.p5js.org/code_slang/embed/1RknaENfh"></iframe>
         </div>
 
         <div class="instructions">
-            <p>If you manually change the numbers in <code>radiuses</code>, the circle will change shape accordingly.</p>
+            <p>If you manually change the numbers in <code>points</code>, the circle will change shape accordingly.</p>
             <p><a href="https://editor.p5js.org/code_slang/sketches/xcZw02i_G" target="new">Try it.</a></p>
         </div>
         <div class="embed"><iframe src="https://editor.p5js.org/code_slang/embed/xcZw02i_G"></iframe></div>
 
         <div class="instructions">
-            <p>The slang functions codify these changes to the "radiuses" in the <code>radiuses</code> array. </p> 
-            <p>For example, multiplying each radius by 2 would double the size of the circle. Using the <code>map</code> function, we can easily loop over each radius in <code>radiuses</code>:</p>
-            <p><code>radiuses.map(radius => radius * 2)</code></p>
+            <p>The slang functions codify these changes to the numbers in the <code>points</code> array. </p> 
+            <p>For example, multiplying each point by 2 would double the size of the circle. Using the <code>map</code> function, we can easily loop over each point in <code>points</code>:</p>
+            <p><code>points.map(point => point * 2)</code></p>
             <p></p>
             <p><a href="https://editor.p5js.org/code_slang/sketches/BUCftYsxu" target="new">Try out your own functions here.</a></p>
 
@@ -111,7 +129,7 @@
             <code>Math.log()</code><br>
             <code>Math.random()</code>
             </p>
-            <p>See what they do individually, and then try combining them. For example: <br><code>radiuses.map((radius, angle) => radius * Math.abs(Math.cos(angle * 3))))</code></p>
+            <p>See what they do individually, and then try combining them. For example: <br><code>points.map((point, angle) => point * Math.abs(Math.cos(angle * 3))))</code></p>
             <p><a href="https://editor.p5js.org/code_slang/sketches/XyVl_EQis" target="new">Experiment here.</a></p>
         </div>
         <!-- <div class="embed"><iframe src="https://editor.p5js.org/code_slang/embed/OZsc06bz0"></iframe></div>
